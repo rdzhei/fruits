@@ -1,41 +1,49 @@
 import React from 'react';
-import Tile from "./tile/Tile";
+import {usePopulateTiles} from "./tile/tilePopulator";
 
 
 
 export default function Grid() {
 
-    const width = 75 * 14 + 'px';
-    const height = 75 * 10 + 'px';
+    const width: string = 75 * 15 + 'px';
+    const height: string = 75 * 11 + 'px';
+
+    const tiles = usePopulateTiles();
 
     return (
         <div
             style={{
-                width: width,
-                height: height,
-                border: '1px solid black',
                 display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+
             }}
         >
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
 
+            <div
+                style={{
+                    width: width,
+                    height: height,
+                    border: '1px solid black',
+                    display: 'grid',
+                    gridTemplateColumns: '25px 1fr 25px',
+                    gridTemplateRows: '25px 1fr 25px',
+                }}
+            >
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </div>
         </div>
     );
 
