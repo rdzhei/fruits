@@ -1,24 +1,15 @@
 import Tile from "./Tile";
 
 
-export function usePopulateTiles() {
-
-    let x: number = 0;
-    let y: number = 0;
-
+export function usePopulateTiles()
+{
     let res = [];
 
-    while (x < 16 && y < 12) {
-
-        res.push(<Tile x={x} y={y}  />)
-        x++;
-        if (x > 15) {
-            x = 0;
-            y++;
+    for (let i = 0; i <= 11; i++) {
+        for (let j = 0; j <= 15; j++) {
+            res.push(<Tile x={j} y={i} />)
         }
     }
-
-    console.log(res)
 
     return res;
 }

@@ -5,8 +5,8 @@ import {usePopulateTiles} from "./tile/tilePopulator";
 
 export default function Grid() {
 
-    const width: string = 75 * 15 + 'px';
-    const height: string = 75 * 11 + 'px';
+    const width: string = 75*15 + 'px';
+    const height: string = 75*11 + 'px';
 
     const tiles = usePopulateTiles();
 
@@ -29,20 +29,12 @@ export default function Grid() {
                     height: height,
                     border: '1px solid black',
                     display: 'grid',
-                    gridTemplateColumns: '25px 1fr 25px',
-                    gridTemplateRows: '25px 1fr 25px',
+                    gridTemplateColumns: 'repeat(16, 1fr)',
+                    gridTemplateRows: 'repeat(12, 1fr)',
+                    gap:0,
                 }}
             >
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-
+                {tiles}
             </div>
         </div>
     );
