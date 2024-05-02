@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-        <p>Fruits and vegetables</p>
+        <p>F & V</p>
         <Grid />
 
     </div>

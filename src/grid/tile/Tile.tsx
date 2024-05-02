@@ -3,21 +3,22 @@ import React from 'react';
 interface TileProps {
     x: number;
     y: number;
+    contentType?: number;
 }
 
-export default function Tile(tileProps: TileProps) {
+export default function Tile(tileProps: TileProps)
+{
 
-
-    const bgColor1 = (Math.floor(Math.random() * (100 - 10) + 10)).toString();
-    const bgColor2 =  (Math.floor(Math.random() * (100 - 10) + 10)).toString();
-    const bgColor3 = (Math.floor(Math.random() * (100 - 10) + 10)).toString();
+    const border: string = tileProps.contentType ? '1px solid' : '';
 
     return (
         <div
             style={{
-                backgroundColor: '#' + bgColor1 + bgColor2 + bgColor3,
-                border: '1px black',
-                borderColor: 'black',
+                margin: '1px',
+                border: border,
+                borderColor: '#000011',
+                borderStyle: 'dotted',
+
             }}
         >
             <p
@@ -25,6 +26,7 @@ export default function Tile(tileProps: TileProps) {
                     color: 'red',
                     fontSize: '10px',
                     textAlign: 'center',
+
                 }}
             >
                 {'x:' + tileProps.x  + ' y:' + tileProps.y}

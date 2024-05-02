@@ -1,5 +1,5 @@
 import React from 'react';
-import {usePopulateTiles} from "./tile/tilePopulator";
+import {useDrawTiles} from "./tile/tileDrawer";
 
 
 
@@ -8,7 +8,7 @@ export default function Grid() {
     const width: string = 75*15 + 'px';
     const height: string = 75*11 + 'px';
 
-    const tiles = usePopulateTiles();
+    const tiles = useDrawTiles();
 
     return (
         <div
@@ -32,6 +32,8 @@ export default function Grid() {
                     gridTemplateColumns: 'repeat(16, 1fr)',
                     gridTemplateRows: 'repeat(12, 1fr)',
                     gap:0,
+                    backgroundColor: '#9BEDFF',
+
                 }}
             >
                 {tiles}
